@@ -14,7 +14,7 @@ fun main() {
          </head>
            <body>
              <p>This is a very simple <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> document.</p>
-             <p>It only has   two    paragraphs.</p>
+             <p>It only has   two <a href="https://www.google.com"></a>  paragraphs.</p>
            </body>
         </html>"""
 
