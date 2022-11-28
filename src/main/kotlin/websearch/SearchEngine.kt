@@ -7,13 +7,13 @@ class SearchEngine(private val webMap: Map<URL, WebPage>) {
     val pairs = mutableListOf<List<Pair<String, URL>>>()
     urlToWords.keys.forEach { k ->
       pairs.add(
-        urlToWords[k]!!.map { w -> Pair(w, k) })
+        urlToWords[k]!!.map { w -> Pair(w, k) }
+      )
     }
-    val pairs2 = pairs.flatten()  // word url pairs in a list
+    val pairs2 = pairs.flatten()
     val wordGroup = pairs2.groupBy { it.first }
-    index = wordGroup.mapValues { entry -> rank(entry.value) }
+    index = wordGroup.mapValues { rank(it.value) }
   }
-
 
   private fun rank(urlToWords: List<Pair<String, URL>>): List<SearchResult> {
     val uniqueUrls = mutableListOf<URL>()
@@ -47,7 +47,3 @@ class SearchResultsSummary(val query: String, val results: List<SearchResult>) {
     return str
   }
 }
-
-
-
-

@@ -11,4 +11,9 @@ val downloadedWebPages: Map<URL, WebPage> =
   )
 
 private fun loadPage(filename: String) =
-  WebPage(parse(File("src/main/data/$filename").bufferedReader().readLines().joinToString("\n")))
+  WebPage(
+    parse(
+      File("src/main/data/$filename").bufferedReader().readLines()
+        .joinToString("\n")
+    )
+  )

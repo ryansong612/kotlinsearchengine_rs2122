@@ -21,7 +21,10 @@ class WebPageTest {
     val htmlDocument: Document = Jsoup.parse(html)
 
     val webPage = WebPage(htmlDocument)
-    assertEquals(listOf("this", "is", "a", "simple", "document"), webPage.extractWords())
+    assertEquals(
+      listOf("this", "is", "a", "simple", "document"),
+      webPage.extractWords()
+    )
   }
 
   @Test
@@ -42,7 +45,18 @@ class WebPageTest {
 
     val webPage = WebPage(htmlDocument)
     assertEquals(
-      listOf("simple", "page", "this", "is", "a", "very", "very", "simple", "html", "document"),
+      listOf(
+        "simple",
+        "page",
+        "this",
+        "is",
+        "a",
+        "very",
+        "very",
+        "simple",
+        "html",
+        "document"
+      ),
       webPage.extractWords()
     )
   }

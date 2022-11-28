@@ -1,5 +1,5 @@
 package websearch
-import org.jsoup.Jsoup
+
 import org.jsoup.nodes.Document
 
 class URL(val url: String) {
@@ -20,10 +20,4 @@ class WebPage(val doc: Document) {
       .split(' ')
       .map { it.lowercase() }
   }
-}
-
-
-fun main() {
-  val urls = listOf(URL("http://a.com/a"), URL("http://a.com/a"), URL("http://b.com/b"),
-    URL("http://a.com/a"))
 }

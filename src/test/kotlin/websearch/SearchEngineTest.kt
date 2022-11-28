@@ -60,7 +60,11 @@ class SearchEngineTest {
     assertResultsMatch("https://www.imperial.ac.uk", 1, summary.results[1])
   }
 
-  private fun assertResultsMatch(expectedUrl: String, numRefs: Int, searchResult: SearchResult) {
+  private fun assertResultsMatch(
+    expectedUrl: String,
+    numRefs: Int,
+    searchResult: SearchResult
+  ) {
     assertEquals(expectedUrl, searchResult.url.toString())
     assertEquals(numRefs, searchResult.numRefs)
   }
