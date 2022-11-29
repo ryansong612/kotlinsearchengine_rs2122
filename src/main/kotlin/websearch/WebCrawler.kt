@@ -11,7 +11,6 @@ class WebCrawler(val startFrom: URL, private var limit: Int = 10) {
     try {
       webPage1 = u.download()
     } catch (e: Throwable) {
-      println("Invalid URL")
       return l
     }
     if (!cList.contains(u)) {
@@ -20,10 +19,8 @@ class WebCrawler(val startFrom: URL, private var limit: Int = 10) {
     } else {
       return l
     }
-    println(u)
     var nl = l - 1
     val links = webPage1.extractLinks()
-    println(links)
     for (link in links) {
       nl = run(link, nl)
     }
